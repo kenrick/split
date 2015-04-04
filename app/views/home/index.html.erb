@@ -1,0 +1,9 @@
+<% flash.each do |type, message| %>
+  <div><%= message %></div>
+<% end %>
+<h1>Home#index</h1>
+<% if current_user %>
+  <p>Howdy <%= current_user.name %>!</p>
+<% else %>
+  <%= link_to "Sign in with Github", "/auth/github" %>
+<% end %>
