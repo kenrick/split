@@ -10,7 +10,7 @@ RSpec.feature 'Signing in with github' do
     expect(User.count).to eq(0)
 
     visit '/'
-    click_link 'Sign in with Github'
+    click_link I18n.t('shared.header.sign_in_with_github')
 
     expect(page).to have_content('Signed in sucessfully')
     expect(page).to have_content('Howdy john!')
@@ -22,7 +22,7 @@ RSpec.feature 'Signing in with github' do
     create :user
 
     visit '/'
-    click_link 'Sign in with Github'
+    click_link I18n.t('shared.header.sign_in_with_github')
 
     expect(page).to have_content('Signed in sucessfully')
     expect(User.count).to eq(1)
